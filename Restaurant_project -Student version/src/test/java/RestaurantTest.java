@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.lang.reflect.Array;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,7 +45,7 @@ class RestaurantTest {
     @Test
 
     public void select_items_which_are_present_in_menu_then_return_orderTotal(){
-        List<String> itemName=new ArrayList<>();
+        List<String> itemName= Arrays.asList("Sweet corn soup","Vegetable lasagne");
         restaurantDetails();
         int price= restaurant.getTotalOrderValue(itemName);
         assertEquals(388,price);

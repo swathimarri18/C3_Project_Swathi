@@ -33,6 +33,17 @@ public class Restaurant {
             return false;
         }
     }
+    public int getTotalOrderValue(List<String> itemName) {
+        int totalValue = 0;
+        for (String item : itemName) {
+            try {
+                totalValue = totalValue + findItemByName(item).getPrice();
+            } catch (itemNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        return totalValue;
+    }
 
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
