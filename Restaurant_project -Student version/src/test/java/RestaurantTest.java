@@ -32,9 +32,6 @@ class RestaurantTest {
           assertTrue(spiedRestaurant.isRestaurantOpen());
 
         }
-
-
-
     @Test
     public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time(){
         //WRITE UNIT TEST CASE HERE
@@ -42,7 +39,18 @@ class RestaurantTest {
         LocalTime restaurant_open = LocalTime.parse("22:30:00");
         Mockito.when(spiedRestaurant.getCurrentTime()).thenReturn(restaurant_open);
         assertFalse(spiedRestaurant.isRestaurantOpen());
-        }
+    }
+
+    @Test
+
+    public void select_items_which_are_present_in_menu_then_return_orderTotal(){
+        List<String> itemName=Arrays.asList("Sweet corn soup","Vegetable lasagne");
+        restaurantDetails();
+        int price= restaurant.getTotalOrderValue(itemName);
+        assertEquals(388,price);
+    }
+
+
 
         //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
