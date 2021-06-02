@@ -44,7 +44,7 @@ class RestaurantTest {
     @Test
 
     public void select_items_which_are_present_in_menu_then_return_orderTotal(){
-        List<String> itemName=Arrays.asList("Sweet corn soup","Vegetable lasagne");
+        List<String> itemName=new ArrayList<>();
         restaurantDetails();
         int price= restaurant.getTotalOrderValue(itemName);
         assertEquals(388,price);
